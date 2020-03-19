@@ -1,0 +1,17 @@
+{
+	"name": "folder_organizer",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"run": "node app.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"chokidar": "^3.3.1",
+		"node-notifier": "^6.0.0",
+		"platform-folders": "^0.5.1"
+	}
+}
