@@ -1,7 +1,7 @@
 const chokidar = require('chokidar')
 const path = require('path')
 const mv = require('mv')
-const { filetypes } = require('./filetypes')
+const { types } = require('./types')
 
 const watchFolder = '/src'
 const persistent = process.env.PERSISTENT || true
@@ -24,12 +24,13 @@ watcher.on('ready', () =>
 
 watcher.on('add', (filePath) => {
 	const fileName = filePath.split('/').pop()
+    console.log(fileName);
 
-	filetypes.forEach((element) => {
-		const type = element[0]
-		const newFilePath = path.join(element[1], fileName)
-
-		if (fileName.endsWith(type)) {
+	types.forEach((element) => {
+		const regex = new RegExp(element[0])
+		const newFilePath = path.join(`/dst/${element[1]}`, fileName)
+        console.log(fileName);
+		if (regex.test(fileName)) {
 			mv(filePath, newFilePath, {mkdirp: true}, console.error)
 		}
 	})
