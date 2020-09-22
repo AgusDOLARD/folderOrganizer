@@ -4,16 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "run": "node app.js",
-    "dev": "nodemon app.js >> logs"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chokidar": "^3.3.1",
-    "node-notifier": "^6.0.0",
-    "nodemon": "^2.0.4",
-    "platform-folders": "^0.5.1"
+    "mv": "^2.1.1"
   }
 }
